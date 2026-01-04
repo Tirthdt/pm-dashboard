@@ -1,0 +1,41 @@
+<section class="my-3 p-3 mx-3">
+  <p-table [value]="tableData()">
+    <ng-template #caption>
+      <div class="flex items-center justify-between">
+        <span class="text-xl font-bold">Projects</span>
+      </div>
+    </ng-template>
+    <ng-template #header>
+      <tr>
+        <th>Project Name</th>
+        <th>Status</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Progress</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-project let-rowIndex="rowIndex">
+      @if (loading()) {
+      <tr>
+        <td><p-skeleton width="20px"></p-skeleton></td>
+        <td><p-skeleton></p-skeleton></td>
+        <td><p-skeleton></p-skeleton></td>
+        <td><p-skeleton></p-skeleton></td>
+        <td><p-skeleton></p-skeleton></td>
+      </tr>
+      } @else {
+      <tr>
+        <td>{{ project.name }}</td>
+        <td>
+          <p-tag [value]="project.status.toUpperCase()" [severity]="getSeverity(project.status)" />
+        </td>
+        <td>{{ project.startDate }}</td>
+        <td>{{ project.endDate }}</td>
+        <td>
+          <p-progressbar [value]="project.progress" />
+        </td>
+      </tr>
+      }
+    </ng-template>
+  </p-table>
+</section>

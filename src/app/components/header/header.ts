@@ -16,11 +16,13 @@ export class Header {
       {
         label: 'Home',
         icon: 'pi pi-home',
+        routerLink: '/',
       },
 
       {
         label: 'Projects',
         icon: 'pi pi-search',
+        routerLink: 'projects/',
       },
       {
         label: 'Contact',
