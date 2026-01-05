@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, PrimeIcons } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 
 @Component({
@@ -15,19 +15,26 @@ export class Header {
     this.items = [
       {
         label: 'Home',
-        icon: 'pi pi-home',
+        icon: PrimeIcons.HOME,
         routerLink: '/',
       },
 
       {
         label: 'Projects',
-        icon: 'pi pi-search',
+        icon: PrimeIcons.ENVELOPE,
         routerLink: 'projects/',
       },
+
       {
-        label: 'Contact',
-        icon: 'pi pi-envelope',
+        label: 'Toggle',
+        icon: PrimeIcons.SUN,
+        command: (event) => this.toggleDarkMode(),
       },
     ];
+  }
+
+  toggleDarkMode() {
+    const element = document.querySelector('html');
+    element?.classList.toggle('my-app-dark');
   }
 }
