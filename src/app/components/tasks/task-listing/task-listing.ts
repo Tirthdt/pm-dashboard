@@ -5,14 +5,10 @@ import { TagModule } from 'primeng/tag';
 import { TaskService } from '../../../services/task-service';
 import { TaskCard } from '../task-card/task-card';
 import { SkeletonModule } from 'primeng/skeleton';
-import { UpperCasePipe } from '@angular/common';
-import { Task } from '../../../models/task.model';
-
-export type TaskStatus = 'backlog' | 'in progress' | 'verify' | 'completed';
 
 @Component({
   selector: 'app-task-listing',
-  imports: [DividerModule, TagModule, AvatarModule, SkeletonModule, TaskCard, UpperCasePipe],
+  imports: [DividerModule, TagModule, AvatarModule, SkeletonModule, TaskCard],
   templateUrl: './task-listing.html',
   styleUrl: './task-listing.css',
 })
