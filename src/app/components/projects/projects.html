@@ -1,5 +1,5 @@
 <section class="my-3 p-3 mx-3">
-  @if (loading()) {
+  @if (projectService.loading()) {
   <p-table [value]="skeleton">
     <ng-template #caption>
       <div class="flex items-center justify-between">
@@ -15,9 +15,9 @@
         <th>Progress</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-skeleton>
+    <ng-template pTemplate="body" let-item>
       <tr height="50px">
-        <td>Loading</td>
+        <td><p-skeleton></p-skeleton></td>
         <td><p-skeleton></p-skeleton></td>
         <td><p-skeleton></p-skeleton></td>
         <td><p-skeleton></p-skeleton></td>
@@ -26,7 +26,7 @@
     </ng-template>
   </p-table>
   } @else {
-  <p-table [value]="projects()">
+  <p-table [value]="projectService.projects()">
     <ng-template #caption>
       <div class="flex items-center justify-between">
         <span class="text-xl font-bold">Projects</span>

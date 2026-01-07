@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { PROJECTS_MOCK } from '../../data';
 import { Project } from '../models/project.model';
 import { delay, Observable, of } from 'rxjs';
@@ -7,11 +7,19 @@ import { delay, Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class ProjectService {
-  getProjects(): Observable<Project[]> {
-    return of(PROJECTS_MOCK).pipe(delay(2000));
+  loading = signal<boolean>(false);
+  projects = signal<Project[]>([]);
+  error = signal<string>('');
+
+  getProjects() {
+    this.loading.set(true);
+    setTimeout(() => {
+      this.projects.set(PROJECTS_MOCK);
+      this.loading.set(false);
+    }, 2000);
   }
 
-  getProject(projectId: string): Observable<Project | null> {
+  getProject(projectId: string) {
     const project = PROJECTS_MOCK.find((p) => p.id === projectId);
     if (project) {
       return of(project).pipe(delay(1000));

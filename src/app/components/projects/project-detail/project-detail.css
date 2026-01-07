@@ -1,0 +1,34 @@
+.scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 500px;
+  background-color: var(--p-menubar-background);
+  border: 2px solid var(--p-menubar-border-color);
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.task {
+  background-color: var(--p-menubar-background);
+  border: 2px solid var(--p-menubar-border-color);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.task h4 {
+  margin: 0 0 20px 0;
+}
+
+.task > * {
+  margin-bottom: 20px;
+}
