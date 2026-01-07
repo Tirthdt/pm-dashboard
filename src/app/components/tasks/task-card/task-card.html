@@ -1,0 +1,18 @@
+<div class="task">
+  @if(task()){
+  <h4>{{ task()?.name }}</h4>
+  <p-tag severity="info">{{ task()?.component }}</p-tag>
+  <div>
+    <span class="pi pi-calendar"></span>
+    <span class="ml-1">{{ task()?.dueDate | date : 'mediumDate' }}</span>
+  </div>
+  <div class="absolute bottom-1 right-1">
+    <p-avatar
+      image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
+      class="mr-2"
+      size="large"
+      shape="circle"
+    />
+  </div>
+  }
+</div>
