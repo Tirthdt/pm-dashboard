@@ -1,1 +1,42 @@
-<p>task-listing works!</p>
+<div class="scroll-container">
+  @for (taskstatus of taskStatus; track $index){
+  <div class="item overflow-scroll">
+    <h4 class="p-2 mt-[2px] ml-[5px]">{{ taskstatus }}</h4>
+    <p-divider></p-divider>
+    @if (taskService.loading()) {
+    <div class="task-container min-h-[80%] p-3 overflow-scroll">
+      <div class="taskSkeleton">
+        <p-skeleton width="100%" height="100%"></p-skeleton>
+      </div>
+      <div class="taskSkeleton">
+        <p-skeleton width="100%" height="100%"></p-skeleton>
+      </div>
+      <div class="taskSkeleton">
+        <p-skeleton width="100%" height="100%"></p-skeleton>
+      </div>
+    </div>
+    } @else {
+    <div class="task-container min-h-[80%] p-3 overflow-scroll">
+      @if (taskstatus === "Backlog") { @for (task of backlogTasks(); track task.id) {
+      <app-task-card
+        [task]="{ name: task.name, component: task.component, dueDate: task.dueDate }"
+      />
+      } } @else if (taskstatus === "In Progress") { @for (task of inProgressTasks(); track task.id)
+      {
+      <app-task-card
+        [task]="{ name: task.name, component: task.component, dueDate: task.dueDate }"
+      />
+      } } @else if (taskstatus === "Verify") { @for (task of verifyTasks(); track task.id) {
+      <app-task-card
+        [task]="{ name: task.name, component: task.component, dueDate: task.dueDate }"
+      />
+      }} @else { @for (task of completedTasks(); track task.id) {
+      <app-task-card
+        [task]="{ name: task.name, component: task.component, dueDate: task.dueDate }"
+      />
+      } }
+    </div>
+    }
+  </div>
+  }
+</div>

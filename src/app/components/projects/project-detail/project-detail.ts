@@ -8,6 +8,7 @@ import { DividerModule } from 'primeng/divider';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { AvatarModule } from 'primeng/avatar';
 import { CardModule } from 'primeng/card';
+import { TaskListing } from '../../tasks/task-listing/task-listing';
 
 @Component({
   selector: 'app-project-detail',
@@ -21,6 +22,7 @@ import { CardModule } from 'primeng/card';
     AvatarModule,
     DatePipe,
     CardModule,
+    TaskListing,
   ],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.css',

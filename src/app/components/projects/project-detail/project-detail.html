@@ -103,7 +103,7 @@
   </div>
   <div
     id="status"
-    class="ml-3 bg-[var(--p-menubar-background)] w-[50%] mt-4 border-2 border-[var(--p-menubar-border-color)] border-solid p-4 rounded-[var(--p-menubar-border-radius)]"
+    class="ml-3 bg-[var(--p-menubar-background)] w-[75%] mt-4 border-2 border-[var(--p-menubar-border-color)] border-solid p-4 rounded-[var(--p-menubar-border-radius)]"
   >
     <h3 class="text-xl">Project Health</h3>
     <p-divider></p-divider>
@@ -139,7 +139,7 @@
       </div>
       <div class="w-[30%] flex items-end justify-center">
         <div
-          class="h-[70%] bg-[var(--p-avatar-background)] p-3 rounded-[var(--p-menubar-border-radius)]"
+          class="h-[58%] w-full border-solid border-2 border-[var(--p-menubar-border-color)] text-center bg-[var(--p-menubar-background)] p-3 rounded-[var(--p-menubar-border-radius)]"
         >
           Risk Level
           <h3>{{ 'Medium' | uppercase }}</h3>
@@ -147,94 +147,7 @@
       </div>
     </div>
     <p-divider></p-divider>
-    <div class="scroll-container">
-      <div class="item overflow-scroll">
-        <h4 class="p-2 mt-[2px] ml-[5px]">Backlog</h4>
-        <p-divider></p-divider>
-        <div class="task-container min-h-[80%] p-3 overflow-scroll">
-          <div class="task">
-            <h4>Refactore Pipeline script</h4>
-            <p-tag severity="info">Backend</p-tag>
-            <div>
-              <span class="pi pi-calendar"></span>
-              <span class="ml-1">{{ '2025-06-30' | date : 'mediumDate' }}</span>
-            </div>
-            <div class="absolute bottom-1 right-1">
-              <p-avatar
-                image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
-                class="mr-2"
-                size="large"
-                shape="circle"
-              />
-            </div>
-          </div>
-          <div class="task">
-            <h4>Refactore Pipeline script</h4>
-            <p-tag severity="info">Backend</p-tag>
-            <div>
-              <span class="pi pi-calendar"></span>
-              <span class="ml-1">{{ '2025-06-30' | date : 'mediumDate' }}</span>
-            </div>
-            <div class="absolute bottom-1 right-1">
-              <p-avatar
-                image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
-                class="mr-2"
-                size="large"
-                shape="circle"
-              />
-            </div>
-          </div>
-          <div class="task">
-            <h4>Refactore Pipeline script</h4>
-            <p-tag severity="info">Backend</p-tag>
-            <div>
-              <span class="pi pi-calendar"></span>
-              <span class="ml-1">{{ '2025-06-30' | date : 'mediumDate' }}</span>
-            </div>
-            <div class="absolute bottom-1 right-1">
-              <p-avatar
-                image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
-                class="mr-2"
-                size="large"
-                shape="circle"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <h4 class="p-2 mt-[2px] ml-[5px]">In Progress</h4>
-        <p-divider></p-divider>
-        <div class="task-container min-h-[80%] p-3">
-          <div class="task">
-            <h4>Refactore Pipeline script</h4>
-            <p-tag severity="info">Backend</p-tag>
-            <div>
-              <span class="pi pi-calendar"></span>
-              <span class="ml-1">{{ '2025-06-30' | date : 'mediumDate' }}</span>
-            </div>
-            <div class="absolute bottom-1 right-1">
-              <p-avatar
-                image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
-                class="mr-2"
-                size="large"
-                shape="circle"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <h4 class="p-2 mt-[2px] ml-[5px]">Verify</h4>
-        <p-divider></p-divider>
-        <div class="task-container min-h-[80%] p-3"></div>
-      </div>
-      <div class="item">
-        <h4 class="p-2 mt-[2px] ml-[5px]">Complete</h4>
-        <p-divider></p-divider>
-        <div class="task-container min-h-[80%] p-3"></div>
-      </div>
-    </div>
+    <app-task-listing />
   </div>
 </section>
 }
